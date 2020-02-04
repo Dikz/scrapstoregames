@@ -10,7 +10,7 @@ class Offers {
    * type: 'weeklongdeals'
    * language: 'english'
    */
-  constructor(config) {
+  constructor(config = {}) {
     let { type = 'weeklongdeals', language = 'english' } = config;
 
     this.type = type;
@@ -26,7 +26,8 @@ class Offers {
 
   /**
    * Method to fetch number of pages
-   * @returns {Number} Returns the number of pages
+   * @async
+   * @return {Promise<number>} Returns the number of pages
    */
   async getPages() {
     let response = await steam(this.options);
@@ -38,6 +39,16 @@ class Offers {
     return pages;
   }
 
+  /**
+   * Get game list in promotion/offers
+   * @async
+   * @return {Promise<*>} Game list and other details of the collect
+   * @example
+   * games: [] // Array
+   * total: 10 // Number
+   * pages: '1' // String
+   * collect_timestamp: 1580844302139 // Number - timestamp
+   */
   async getGames() {
     let gameList = [];
     let pages = await this.getPages();
