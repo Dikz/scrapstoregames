@@ -24,6 +24,10 @@ class Offers {
     };
   }
 
+  /**
+   * Method to fetch number of pages
+   * @returns {Number} Returns the number of pages
+   */
   async getPages() {
     let response = await steam(this.options);
     const $ = cheerio.load(response.data);
