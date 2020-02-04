@@ -2,7 +2,17 @@ const steam = require('./utils/steam');
 const cheerio = require('cheerio');
 
 class Offers {
-  constructor(...{ type = 'weeklongdeals', language = 'portuguese' }) {
+  /**
+   * @param {Object} config (Object) Configuration of scrapping
+   * @param {string} config.type Default: weeklongdeals
+   * @param {string} config.language Default: english
+   * @example
+   * type: 'weeklongdeals'
+   * language: 'english'
+   */
+  constructor(config) {
+    let { type = 'weeklongdeals', language = 'english' } = config;
+
     this.type = type;
     this.language = language;
     this.options = {
