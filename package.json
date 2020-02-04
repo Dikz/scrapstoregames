@@ -1,0 +1,22 @@
+{
+  "name": "scrapstoregames",
+  "version": "0.1.0",
+  "description": "A simple library for scraping of games and your offers",
+  "main": "index.js",
+  "author": "Dikz <cicerogabrieldk@gmail.com>",
+  "license": "MIT",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1"
+  }
+}
