@@ -1,7 +1,7 @@
 const steam = require('./utils/steam');
 const cheerio = require('cheerio');
 
-class Offers {
+class OffersSteam {
   /**
    * @param {Object} config (Object) Configuration of scrapping
    * @param {string} config.type Default: weeklongdeals
@@ -139,4 +139,4 @@ class Offers {
   }
 }
 
-module.exports = Offers;
+module.exports = OffersSteam;

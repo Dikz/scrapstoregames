@@ -1,5 +1,5 @@
-const Offers = require('./src/Offers');
+const OffersSteam = require('./src/OffersSteam');
 
 module.exports = {
-  Offers,
+  OffersSteam,
 };
