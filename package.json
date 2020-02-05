@@ -1,6 +1,6 @@
 {
   "name": "scrapstoregames",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A simple library for scraping of games and your offers",
   "main": "index.js",
   "author": "Dikz <cicerogabrieldk@gmail.com>",
