@@ -64,6 +64,11 @@ class OffersSteam {
         let platforms = $(this).find('.search_name p');
         let appID = $(this).attr('data-ds-appid');
 
+        let prices = $(this)
+          .find('.search_price_discount_combined .search_price.discounted')
+          .html()
+          .split('<br>');
+
         gameList.push({
           appID,
           name: $(this)
@@ -77,20 +82,10 @@ class OffersSteam {
             .find('.search_price_discount_combined .search_discount span')
             .text()
             .replace('-', ''),
-          price: $(this)
-            .find('.search_price_discount_combined .search_price.discounted')
-            .text()
-            .trim()
-            .replace(/\s/gm, '')
-            .split('R$')
-            .splice(1)[0],
-          price_discount: $(this)
-            .find('.search_price_discount_combined .search_price.discounted')
-            .text()
-            .trim()
-            .replace(/\s/gm, '')
-            .split('R$')
-            .splice(1)[1],
+          price: cheerio
+            .load(prices[0])('strike')
+            .text(),
+          price_discount: prices[1],
           released: $(this)
             .find('.search_released')
             .text(),
